@@ -17,10 +17,13 @@ function App() {
         </Header>
         <CenterDivider/>
         <Content className={styles.content}>
-          <SequenceOfEvents/>
-          <SongLyrics/>
+          {[<SequenceOfEvents/>, <SongLyrics/>].map((Component, i) => (
+            <div key={i}>
+              {Component}
+              <CenterDivider/>
+            </div>
+          ))}
         </Content>
-        <CenterDivider/>
         <Footer className={styles.footer}>
           <div className={styles.thankYou}>Thank you</div>
           <div>We would like to thank all our friends and families who have travelled
