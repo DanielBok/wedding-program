@@ -1,0 +1,73 @@
+:root {
+    --blue: #4c638f;
+}
+
+.outerLayout {
+    background-color: #cecece;
+    display: flex;
+    align-items: center;
+}
+
+.innerLayout {
+    background: url("https://github.com/DanielBok/wedding-program/blob/master/static/White%20background.png?raw=true") fixed center no-repeat;
+    background-size: contain;
+    min-height: 100vh;
+    max-width: 1100px;
+}
+
+.content {
+    margin: 12px;
+    background: rgba(231, 231, 231, 0.25);
+}
+
+.header {
+    text-align: center;
+    font-family: LuxuriousScript, serif;
+    padding: 12px 0;
+    font-size: 64px;
+}
+
+
+.footer {
+    background: white;
+    text-align: center;
+    font-size: 12px;
+}
+
+.thankYou {
+    font-family: LuxuriousScript, serif;
+    font-size: 48px;
+}
+
+@media screen and (min-width: 600px) {
+    /*.layout {*/
+    /*    background-color: var(--blue);*/
+    /*}*/
+    .header {
+        background: inherit;
+        color: var(--blue);
+    }
+
+    .content {
+
+    }
+
+}
+
+@media screen and (min-width: 200px) and (max-width: 600px) {
+    /*.layout {*/
+    /*    background-color: white;*/
+    /*}*/
+    .header {
+        color: var(--blue);
+        background: white;
+        height: 100%;
+    }
+
+    .outerLayout {
+        background-color: white;
+    }
+}
+
+
+

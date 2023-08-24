@@ -1,25 +1,35 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Layout } from "antd";
+import React from "react";
+import styles from "./app.module.css";
+import CenterDivider from "./components/CenterDivider";
+import SequenceOfEvents from "./components/SequenceOfEvents";
+import SongLyrics from "./components/SongLyrics";
+
+
+const {Header, Footer, Content} = Layout;
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Layout className={styles.outerLayout}>
+      <Layout className={styles.innerLayout}>
+        <Header className={styles.header}>
+          The Wedding of Daniel and Priscilla
+        </Header>
+        <CenterDivider/>
+        <Content className={styles.content}>
+          <SequenceOfEvents/>
+          <SongLyrics/>
+        </Content>
+        <CenterDivider/>
+        <Footer className={styles.footer}>
+          <div className={styles.thankYou}>Thank you</div>
+          <div>We would like to thank all our friends and families who have travelled
+            great
+            distances to celebrate our wedding with us!
+          </div>
+        </Footer>
+      </Layout>
+    </Layout>
   );
 }
 
