@@ -6,7 +6,7 @@ const {Title, Text} = Typography;
 const SequenceOfEvents = () => {
   return (
     <div id="soe">
-      <Title underline>Sequence of Events</Title>
+      <Title underline level={5}>Sequence of Events</Title>
       <Text>
 
       </Text>
