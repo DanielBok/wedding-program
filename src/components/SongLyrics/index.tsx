@@ -1,22 +1,18 @@
-import { Typography } from "antd";
 import React from "react";
-import styles from "./styles.module.css";
+import BaseComponent from "../BaseComponent";
 
-const {Title, Text} = Typography;
 
-const SongLyrics = () => {
+type Props = { id: string }
+
+
+const SongLyrics: React.FC<Props> = ({id}) => {
   return (
-    <div id="song-lyrics" className={styles.body}>
-      <Title
-        underline
-        level={5}
-        className={styles.title}
-      >
-        Song Lyrics
-      </Title>
-      <Text>
-      </Text>
-    </div>
+    <BaseComponent
+      id={id}
+      title="Song Lyrics"
+    >
+
+    </BaseComponent>
   );
 };
 

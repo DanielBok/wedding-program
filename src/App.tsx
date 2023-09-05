@@ -1,4 +1,5 @@
-import { Layout } from "antd";
+import { CalendarTwoTone, GiftTwoTone, MenuOutlined, SoundTwoTone } from "@ant-design/icons";
+import { FloatButton, Layout } from "antd";
 import React from "react";
 import styles from "./app.module.css";
 import CenterDivider from "./components/CenterDivider";
@@ -9,11 +10,27 @@ import SongLyrics from "./components/SongLyrics";
 
 const {Header, Footer, Content} = Layout;
 
+
 function App() {
   const contents = [
-    <SequenceOfEvents/>,
-    <SongLyrics/>,
-    <Registry/>,
+    {
+      id: "soe",
+      desc: "Sequence of Events",
+      Component: SequenceOfEvents,
+      icon: <CalendarTwoTone/>
+    },
+    {
+      id: "song-lyrics",
+      desc: "Song Lyrics",
+      Component: SongLyrics,
+      icon: <SoundTwoTone/>
+    },
+    {
+      id: "registry",
+      desc: "Registry",
+      Component: Registry,
+      icon: <GiftTwoTone/>
+    },
   ];
 
   return (
@@ -24,12 +41,13 @@ function App() {
         </Header>
         <CenterDivider/>
         <Content className={styles.content}>
-          {contents.map((Component, i) => (
-            <div key={i}>
-              {Component}
-              <CenterDivider/>
-            </div>
-          ))}
+          {contents
+            .map(({id, Component}) => (
+              <div key={id}>
+                {<Component id={id}/>}
+                <CenterDivider/>
+              </div>
+            ))}
         </Content>
         <Footer className={styles.footer}>
           <div className={styles.thankYou}>Thank you</div>
@@ -39,6 +57,24 @@ function App() {
           </div>
         </Footer>
       </Layout>
+      <FloatButton.Group
+        trigger="click"
+        type="primary"
+        style={{right: 24}}
+        icon={<MenuOutlined/>}
+      >
+        {contents.map(({id, icon, desc}) => (
+          <FloatButton
+            tooltip={desc}
+            key={id}
+            icon={icon}
+            onClick={() => {
+              (document.getElementById(id) as HTMLDivElement).scrollIntoView();
+            }}
+          />
+        ))}
+
+      </FloatButton.Group>
     </Layout>
   );
 }

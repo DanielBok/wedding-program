@@ -7,10 +7,12 @@ import QRDetails from "./QRDetails";
 
 const {Text} = Typography;
 
-const Registry = () =>
+type Props = { id: string }
+
+const Registry: React.FC<Props> = ({id}) =>
   (
     <BaseComponent
-      id="registry"
+      id={id}
       title="Registry"
     >
       <TextHolder>

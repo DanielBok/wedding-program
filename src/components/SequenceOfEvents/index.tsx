@@ -1,22 +1,17 @@
-import { Typography } from "antd";
 import React from "react";
-import styles from "./styles.module.css";
+import BaseComponent from "../BaseComponent";
 
-const {Title, Text} = Typography;
 
-const SequenceOfEvents = () => {
+type Props = { id: string }
+
+const SequenceOfEvents: React.FC<Props> = ({id}) => {
   return (
-    <div id="soe" className={styles.body}>
-      <Title
-        underline
-        level={5}
-        className={styles.title}
-      >
-        Sequence of Events
-      </Title>
-      <Text>
-      </Text>
-    </div>
+    <BaseComponent
+      id={id}
+      title="Sequence of Events"
+    >
+
+    </BaseComponent>
   );
 };
 
