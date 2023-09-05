@@ -9,8 +9,7 @@
 }
 
 .innerLayout {
-    background: url("https://github.com/DanielBok/wedding-program/blob/master/static/White%20background.png?raw=true") fixed center no-repeat;
-    background-size: contain;
+    background: url("https://github.com/DanielBok/wedding-program/blob/master/static/White%20background.png?raw=true") fixed center no-repeat white;
     min-height: 100vh;
     max-width: 1100px;
 }
@@ -20,6 +19,7 @@
 }
 
 .header {
+    background-color: white;
     text-align: center;
     font-family: LuxuriousScript, serif;
     padding: 12px 0;
@@ -38,10 +38,12 @@
     font-size: 48px;
 }
 
-@media screen and (min-width: 600px) {
-    /*.layout {*/
-    /*    background-color: var(--blue);*/
-    /*}*/
+/* Big Screen */
+@media screen and (min-width: 731px) {
+    .innerLayout {
+        background-size: 731px;
+    }
+
     .header {
         background: inherit;
         color: var(--blue);
@@ -50,13 +52,14 @@
     .content {
 
     }
-
 }
 
-@media screen and (min-width: 200px) and (max-width: 600px) {
-    /*.layout {*/
-    /*    background-color: white;*/
-    /*}*/
+/* Small screen */
+@media screen and (min-width: 200px) and (max-width: 731px) {
+    .innerLayout {
+        background-size: contain;
+    }
+
     .header {
         color: var(--blue);
         background: white;
