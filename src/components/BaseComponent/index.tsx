@@ -18,7 +18,7 @@ const BaseComponent: React.FC<Prop> = ({id, title, children}) =>
         level={5}
         className={styles.title}
       >
-        Registry
+        {title}
       </Typography.Title>
       {children}
     </div>
