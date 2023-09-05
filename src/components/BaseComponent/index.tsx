@@ -10,8 +10,8 @@ type Prop = {
 }
 
 
-const BaseComponent: React.FC<Prop> = ({id, title, children}) => {
-  return (
+const BaseComponent: React.FC<Prop> = ({id, title, children}) =>
+  (
     <div id={id} className={styles.body}>
       <Typography.Title
         underline
@@ -23,6 +23,11 @@ const BaseComponent: React.FC<Prop> = ({id, title, children}) => {
       {children}
     </div>
   );
-};
+
+export const TextHolder: React.FC<{ children: React.ReactNode }> = ({children}) => (
+  <div className={styles.textBox}>
+    {children}
+  </div>
+);
 
 export default BaseComponent;
