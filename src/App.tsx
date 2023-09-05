@@ -2,6 +2,7 @@ import { Layout } from "antd";
 import React from "react";
 import styles from "./app.module.css";
 import CenterDivider from "./components/CenterDivider";
+import Registry from "./components/Registry";
 import SequenceOfEvents from "./components/SequenceOfEvents";
 import SongLyrics from "./components/SongLyrics";
 
@@ -9,6 +10,12 @@ import SongLyrics from "./components/SongLyrics";
 const {Header, Footer, Content} = Layout;
 
 function App() {
+  const contents = [
+    <SequenceOfEvents/>,
+    <SongLyrics/>,
+    <Registry/>,
+  ];
+
   return (
     <Layout className={styles.outerLayout}>
       <Layout className={styles.innerLayout}>
@@ -17,7 +24,7 @@ function App() {
         </Header>
         <CenterDivider/>
         <Content className={styles.content}>
-          {[<SequenceOfEvents/>, <SongLyrics/>].map((Component, i) => (
+          {contents.map((Component, i) => (
             <div key={i}>
               {Component}
               <CenterDivider/>
