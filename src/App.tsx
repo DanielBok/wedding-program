@@ -1,11 +1,13 @@
-import { CalendarTwoTone, GiftTwoTone, MenuOutlined, SoundTwoTone } from "@ant-design/icons";
+import { CalendarTwoTone, GiftTwoTone, InfoCircleTwoTone, MenuOutlined, SoundTwoTone } from "@ant-design/icons";
 import { FloatButton, Layout } from "antd";
 import React from "react";
 import styles from "./app.module.css";
 import CenterDivider from "./components/CenterDivider";
+import Countdown from "./components/Countdown";
 import Registry from "./components/Registry";
 import SequenceOfEvents from "./components/SequenceOfEvents";
 import SongLyrics from "./components/SongLyrics";
+import TopLevelInfo from "./components/TopLevelInfo";
 
 
 const {Header, Footer, Content} = Layout;
@@ -13,6 +15,12 @@ const {Header, Footer, Content} = Layout;
 
 function App() {
   const contents = [
+    {
+      id: "event-details",
+      desc: "Event Details",
+      Component: TopLevelInfo,
+      icon: <InfoCircleTwoTone/>
+    },
     {
       id: "soe",
       desc: "Sequence of Events",
@@ -41,6 +49,8 @@ function App() {
         </Header>
         <CenterDivider/>
         <Content className={styles.content}>
+          <Countdown targetTime={"2023-09-30 15:00:00+0800"}/>
+          <CenterDivider/>
           {contents
             .map(({id, Component}) => (
               <div key={id}>
