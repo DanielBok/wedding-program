@@ -24,7 +24,7 @@ const images = [
 const ImageGallery = () => {
   const sectionRef = useRef<HTMLElement>(null);
   const [percent, setPercent] = useState(0);
-  const setPercentageDebounced = useCallback(debounce(setPercent, 250), []);
+  const setPercentageDebounced = useCallback((v: Parameters<typeof setPercent>[0]) => debounce(setPercent, 250)(v), []);
 
   const scrollLeft = scrollFactory("left");
   const scrollRight = scrollFactory("right");
