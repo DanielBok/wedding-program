@@ -1,6 +1,7 @@
 import { LeftOutlined, RightOutlined } from "@ant-design/icons";
 import { Button, Image, Progress } from "antd";
-import React, { useEffect, useRef, useState } from "react";
+import { debounce } from "lodash";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import Female1 from "./images/Female1.png";
 import Female2 from "./images/Female2.jpg";
 import Male1 from "./images/Male1.jpg";
@@ -23,6 +24,7 @@ const images = [
 const ImageGallery = () => {
   const sectionRef = useRef<HTMLElement>(null);
   const [percent, setPercent] = useState(0);
+  const setPercentageDebounced = useCallback(debounce(setPercent, 250), []);
 
   const scrollLeft = scrollFactory("left");
   const scrollRight = scrollFactory("right");
@@ -91,7 +93,7 @@ const ImageGallery = () => {
       return;
     }
     const {scrollWidth, offsetWidth, scrollLeft} = sectionRef.current;
-    setPercent(calcPercentage(scrollWidth, offsetWidth, scrollLeft));
+    setPercentageDebounced(calcPercentage(scrollWidth, offsetWidth, scrollLeft));
   }
 
   function calcPercentage(scrollWidth: number, offsetWidth: number, scrollLeft: number) {
