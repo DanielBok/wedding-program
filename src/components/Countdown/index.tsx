@@ -1,16 +1,18 @@
 import dayjs from "dayjs";
 import React, { useEffect, useState } from "react";
 import CenterContent from "../CenterContent";
+import CenterDivider from "../CenterDivider";
 import Number from "./Number";
 import styles from "./styles.module.css";
 import Word from "./Word";
 
 type Props = {
   targetTime: string
+  addDivider?: boolean
 }
 
 
-const Countdown: React.FC<Props> = ({targetTime}) => {
+const Countdown: React.FC<Props> = ({targetTime, addDivider = false}) => {
   const [days, setDays] = useState(0);
   const [hours, setHours] = useState(0);
   const [minutes, setMinutes] = useState(1);
@@ -61,11 +63,12 @@ const Countdown: React.FC<Props> = ({targetTime}) => {
   };
 
   return (
-    <CenterContent>
-      <div className={styles.clock}>
-        <div className={styles.countdown}>
-          {Object.entries(values).map(([period, value]) => (
-            <span key={period}>
+    <>
+      <CenterContent>
+        <div className={styles.clock}>
+          <div className={styles.countdown}>
+            {Object.entries(values).map(([period, value]) => (
+              <span key={period}>
             <div className={styles.itemGroup}>
               <Word value={period} className={styles.minorDescriptor}/>
               <div style={{display: "flex"}}>
@@ -74,10 +77,12 @@ const Countdown: React.FC<Props> = ({targetTime}) => {
               </div>
             </div>
           </span>
-          ))}
+            ))}
+          </div>
         </div>
-      </div>
-    </CenterContent>
+      </CenterContent>
+      {addDivider && <CenterDivider/>}
+    </>
   );
 };
 

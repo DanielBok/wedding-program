@@ -49,8 +49,10 @@ function App() {
         </Header>
         <CenterDivider/>
         <Content className={styles.content}>
-          <Countdown targetTime={"2023-09-30 15:00:00+0800"}/>
-          <CenterDivider/>
+          <Countdown
+            targetTime={"2023-09-30 15:00:00+0800"}
+            addDivider
+          />
           {contents
             .map(({id, Component}) => (
               <div key={id}>
