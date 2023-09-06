@@ -13,10 +13,17 @@ const DressCode: React.FC<Props> = ({id}) => {
       id={id}
       title="Dress Code"
     >
-      <ImageGallery/>
       <TextHolder>
-
+        <p>
+          Our dress code is {" "}
+          <b style={{color: '#A7C7E7', backgroundColor: 'black'}}>Pastel Blue</b>
+          {" or "}
+          <b style={{color: 'white', backgroundColor: 'black'}}>White</b>.
+          We've prepared some examples for you in the gallery below.
+          Feel free to scroll through the images to get some inspiration.
+        </p>
       </TextHolder>
+      <ImageGallery/>
     </BaseComponent>
   );
 };

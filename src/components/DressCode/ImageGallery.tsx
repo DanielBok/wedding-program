@@ -35,35 +35,35 @@ const ImageGallery = () => {
   }, []);
 
   return (
-    <div>
-      <div className={styles.imageGallery}>
-        <section ref={sectionRef} onScroll={onScroll}>
-          {images.map((src, i) => (
-            <Image
-              key={i}
-              src={src}
-              height={250}
-            />
-          ))}
-        </section>
-        <div className={styles.buttonRow}>
-          <Button
-            className={styles.button}
-            icon={<LeftOutlined/>}
-            onClick={scrollLeft}
+    <div className={styles.imageGallery}>
+      <section ref={sectionRef} onScroll={onScroll}>
+        {images.map((src, i) => (
+          <Image
+            key={i}
+            src={src}
+            height={250}
           />
-          <Progress
-            percent={percent}
-            strokeColor={{"0%": "#108ee9", "100%": "#87d068"}}
-            showInfo={false}
-            className={styles.progressBar}
-          />
-          <Button
-            className={styles.button}
-            icon={<RightOutlined/>}
-            onClick={scrollRight}
-          />
-        </div>
+        ))}
+      </section>
+      <div className={styles.buttonRow}>
+        <Button
+          type="primary"
+          className={styles.button}
+          icon={<LeftOutlined/>}
+          onClick={scrollLeft}
+        />
+        <Progress
+          percent={percent}
+          strokeColor={{"0%": "#108ee9", "100%": "#87d068"}}
+          showInfo={false}
+          className={styles.progressBar}
+        />
+        <Button
+          type="primary"
+          className={styles.button}
+          icon={<RightOutlined/>}
+          onClick={scrollRight}
+        />
       </div>
     </div>
   );
