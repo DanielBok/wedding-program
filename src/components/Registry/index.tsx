@@ -1,6 +1,7 @@
 import { Tabs, Typography } from "antd";
-import React from "react";
+import React, { useState } from "react";
 import BaseComponent, { TextHolder } from "../BaseComponent";
+import Label from "./Label";
 import QRHongKongPayMe from "./qr-hk-payme.gif";
 import QRSingaporePayNow from "./qr-singapore-paynow.gif";
 import QRDetails from "./QRDetails";
@@ -9,8 +10,10 @@ const {Text} = Typography;
 
 type Props = { id: string }
 
-const Registry: React.FC<Props> = ({id}) =>
-  (
+const Registry: React.FC<Props> = ({id}) => {
+  const [activeKey, setActiveKey] = useState("singapore");
+
+  return (
     <BaseComponent
       id={id}
       title="Registry"
@@ -27,13 +30,14 @@ const Registry: React.FC<Props> = ({id}) =>
         </p>
       </TextHolder>
       <Tabs
-        defaultActiveKey="singapore"
+        activeKey={activeKey}
+        onTabClick={key => setActiveKey(key)}
         style={{maxWidth: "90vw"}}
         centered
         items={[
           {
             key: "singapore",
-            label: "Singapore",
+            label: <Label selected={activeKey === "singapore"}>Singapore</Label>,
             children:
               <QRDetails image={QRSingaporePayNow}>
                 <div><b>PayNow</b> for those from <b>Singapore</b></div>
@@ -41,7 +45,7 @@ const Registry: React.FC<Props> = ({id}) =>
           },
           {
             key: "hongkong",
-            label: "Hong Kong",
+            label: <Label selected={activeKey === "hongkong"}>Hong Kong</Label>,
             children:
               <QRDetails image={QRHongKongPayMe}>
                 <div><b>PayMe</b> for those from <b>Hong Kong</b></div>
@@ -51,6 +55,7 @@ const Registry: React.FC<Props> = ({id}) =>
       />
     </BaseComponent>
   );
+};
 
 
 export default Registry;
