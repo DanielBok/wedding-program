@@ -1,6 +1,6 @@
 import { LeftOutlined, RightOutlined } from "@ant-design/icons";
 import { Button, Image, Progress } from "antd";
-import React, { useCallback, useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Female1 from "./images/Female1.png";
 import Female2 from "./images/Female2.jpg";
 import Male1 from "./images/Male1.jpg";
