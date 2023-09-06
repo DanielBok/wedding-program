@@ -1,5 +1,6 @@
 import dayjs from "dayjs";
 import React, { useEffect, useState } from "react";
+import CenterContent from "../CenterContent";
 import Number from "./Number";
 import styles from "./styles.module.css";
 import Word from "./Word";
@@ -60,10 +61,11 @@ const Countdown: React.FC<Props> = ({targetTime}) => {
   };
 
   return (
-    <div className={styles.clock}>
-      <div className={styles.countdown}>
-        {Object.entries(values).map(([period, value]) => (
-          <span key={period}>
+    <CenterContent>
+      <div className={styles.clock}>
+        <div className={styles.countdown}>
+          {Object.entries(values).map(([period, value]) => (
+            <span key={period}>
             <div className={styles.itemGroup}>
               <Word value={period} className={styles.minorDescriptor}/>
               <div style={{display: "flex"}}>
@@ -72,9 +74,10 @@ const Countdown: React.FC<Props> = ({targetTime}) => {
               </div>
             </div>
           </span>
-        ))}
+          ))}
+        </div>
       </div>
-    </div>
+    </CenterContent>
   );
 };
 
