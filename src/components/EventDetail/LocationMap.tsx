@@ -3,32 +3,6 @@ import { Alert, Collapse } from "antd";
 import React, { useState } from "react";
 import styles from "./styles.module.css";
 
-
-const EventDetail = () => (
-  <div className={styles.eventDetailLayout}>
-    <div style={{marginTop: 8, marginBottom: 14}} className={styles.eventDetailLayout}>
-      <p className={styles.eventDetail}>Saturday</p>
-      <p className={styles.eventDetail}>30 September 2023</p>
-      <p className={styles.eventDetail}>3pm till late</p>
-      <p style={{marginTop: 12}}/>
-      <p className={styles.eventDetail}>Villa Latitude</p>
-      <p className={styles.eventDetail}>Uluwatu, Bali</p>
-    </div>
-    <LocationMap/>
-    <Alert
-      className={styles.alert}
-      showIcon
-      description={(
-        <div className={styles.alertMessage}>
-          We start our ceremony around 4pm. However, please come in
-          between <b>3pm to 4pm</b> so you can enjoy the games
-          we've prepared for you before the ceremony!
-        </div>
-      )}
-    />
-  </div>
-);
-
 const LocationMap = () => {
   // Villa Latitude Location
   const [visible, setVisible] = useState(false);
@@ -73,4 +47,4 @@ const LocationMap = () => {
 };
 
 
-export default EventDetail;
+export default LocationMap;

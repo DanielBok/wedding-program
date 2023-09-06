@@ -7,7 +7,7 @@ import Countdown from "./components/Countdown";
 import Registry from "./components/Registry";
 import SequenceOfEvents from "./components/SequenceOfEvents";
 import SongLyrics from "./components/SongLyrics";
-import TopLevelInfo from "./components/TopLevelInfo";
+import EventDetail from "./components/EventDetail";
 
 
 const {Header, Footer, Content} = Layout;
@@ -18,7 +18,7 @@ function App() {
     {
       id: "event-details",
       desc: "Event Details",
-      Component: TopLevelInfo,
+      Component: EventDetail,
       icon: <InfoCircleTwoTone/>
     },
     {
