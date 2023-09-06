@@ -15,7 +15,7 @@ const BaseComponent: React.FC<Prop> = ({id, title, children}) =>
     <div id={id} className={styles.body}>
       <Typography.Title
         underline
-        level={5}
+        level={4}
         className={styles.title}
       >
         {title}
