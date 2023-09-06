@@ -1,0 +1,29 @@
+.image {
+    width: 150px;
+    height: 150px;
+}
+
+.simpleRuleWrapper {
+    display: flex;
+    flex-direction: column;
+    width: 150px;
+}
+
+.centerText {
+    text-align: center;
+}
+
+.justifyText {
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.ruleList {
+    margin: 4px 0;
+    padding-inline-start: 20px;
+    list-style-type: lower-alpha;
+}
+
+.ruleList > li::marker {
+    font-weight: bold;
+}

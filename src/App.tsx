@@ -4,7 +4,8 @@ import {
   InfoCircleTwoTone,
   MenuOutlined,
   SkinTwoTone,
-  SoundTwoTone
+  SoundTwoTone,
+  TrophyTwoTone
 } from "@ant-design/icons";
 import { FloatButton, Layout } from "antd";
 import React from "react";
@@ -13,6 +14,7 @@ import CenterDivider from "./components/CenterDivider";
 import Countdown from "./components/Countdown";
 import DressCode from "./components/DressCode";
 import EventDetail from "./components/EventDetail";
+import GameRules from "./components/GameRules";
 import Registry from "./components/Registry";
 import SequenceOfEvents from "./components/SequenceOfEvents";
 import SongLyrics from "./components/SongLyrics";
@@ -46,6 +48,12 @@ function App() {
       desc: "Song Lyrics",
       Component: SongLyrics,
       icon: <SoundTwoTone/>
+    },
+    {
+      id: "game-rules",
+      desc: "Game Rules",
+      Component: GameRules,
+      icon: <TrophyTwoTone/>
     },
     {
       id: "registry",
