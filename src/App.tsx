@@ -1,13 +1,21 @@
-import { CalendarTwoTone, GiftTwoTone, InfoCircleTwoTone, MenuOutlined, SoundTwoTone } from "@ant-design/icons";
+import {
+  CalendarTwoTone,
+  GiftTwoTone,
+  InfoCircleTwoTone,
+  MenuOutlined,
+  SkinTwoTone,
+  SoundTwoTone
+} from "@ant-design/icons";
 import { FloatButton, Layout } from "antd";
 import React from "react";
 import styles from "./app.module.css";
 import CenterDivider from "./components/CenterDivider";
 import Countdown from "./components/Countdown";
+import DressCode from "./components/DressCode";
+import EventDetail from "./components/EventDetail";
 import Registry from "./components/Registry";
 import SequenceOfEvents from "./components/SequenceOfEvents";
 import SongLyrics from "./components/SongLyrics";
-import EventDetail from "./components/EventDetail";
 
 
 const {Header, Footer, Content} = Layout;
@@ -20,6 +28,12 @@ function App() {
       desc: "Event Details",
       Component: EventDetail,
       icon: <InfoCircleTwoTone/>
+    },
+    {
+      id: "dress-code",
+      desc: "Dress Code",
+      Component: DressCode,
+      icon: <SkinTwoTone/>
     },
     {
       id: "soe",

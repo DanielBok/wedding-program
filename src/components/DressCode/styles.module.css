@@ -1,0 +1,35 @@
+.imageGallery {
+    display: flex;
+    flex-direction: column;
+}
+
+.imageGallery > section {
+    display: flex;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    width: 100%;
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
+
+.imageGallery > section::-webkit-scrollbar {
+    display: none;
+}
+
+.imageGallery > section > div {
+    flex: 1 0 150px;
+}
+
+.buttonRow {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.button {
+    border-radius: 0;
+}
+
+.progressBar {
+    margin-inline: 4px;
+}
