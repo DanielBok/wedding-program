@@ -1,5 +1,5 @@
 import { Tabs, Typography } from "antd";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import BaseComponent, { TextHolder } from "../BaseComponent";
 import Label from "./Label";
 import QRHongKongPayMe from "./qr-hk-payme.gif";
@@ -12,6 +12,28 @@ type Props = { id: string }
 
 const Registry: React.FC<Props> = ({id}) => {
   const [activeKey, setActiveKey] = useState("singapore");
+
+  useEffect(() => {
+    navigator.geolocation.getCurrentPosition(({coords}) => {
+      //  lat long bound
+      const bounds = {
+        hongkong: {
+          latMin: 22,
+          latMax: 22.7,
+          lonMin: 113,
+          lonMax: 115,
+        }
+      };
+
+      const {latitude, longitude} = coords;
+      for (const [key, {latMin, latMax, lonMin, lonMax}] of Object.entries(bounds)) {
+        if (latMin <= latitude && latitude <= latMax && lonMin <= longitude && longitude <= lonMax) {
+          setActiveKey(key);
+          return;
+        }
+      }
+    });
+  }, []);
 
   return (
     <BaseComponent
