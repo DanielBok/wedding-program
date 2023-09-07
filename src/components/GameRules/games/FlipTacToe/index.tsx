@@ -15,18 +15,17 @@ const rules = [
   "You can choose to play it turn-based (play moves clockwise) or in real-time (fastest flipper)",
 ];
 
-const FlipTacToe = () =>
-  (
-    <GameRuleLayout
-      tagline="Tic-Tac-Toe for adults"
-    >
-      <CenterContent className={styles.imageContainer}>
-        <Image src={FlipTacToeImage} preview={false}/>
-      </CenterContent>
-      <RuleSection>
-        <BasicRuleList rules={rules}/>
-      </RuleSection>
-    </GameRuleLayout>
-  );
+const FlipTacToe = () => (
+  <GameRuleLayout
+    tagline="Tic-Tac-Toe for adults"
+  >
+    <CenterContent className={styles.imageContainer}>
+      <Image src={FlipTacToeImage} preview={false}/>
+    </CenterContent>
+    <RuleSection>
+      <BasicRuleList rules={rules}/>
+    </RuleSection>
+  </GameRuleLayout>
+);
 
 export default FlipTacToe;

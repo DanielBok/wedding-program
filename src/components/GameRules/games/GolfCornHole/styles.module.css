@@ -1,0 +1,8 @@
+.imageContainer {
+    margin: 6px 0;
+}
+
+.subRuleList {
+    padding-inline-start: 20px;
+    list-style: square;
+}

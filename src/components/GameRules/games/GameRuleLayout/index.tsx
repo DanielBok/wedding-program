@@ -30,7 +30,7 @@ export const RuleSection: React.FC<RuleSectionProps> = ({title, children}) => (
 );
 
 type BasicRuleListProps = {
-  rules: string[]
+  rules: React.ReactNode[]
 }
 
 export const BasicRuleList: React.FC<BasicRuleListProps> = ({rules}) => (

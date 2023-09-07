@@ -2,6 +2,7 @@ import { Collapse, Switch } from "antd";
 import React, { useState } from "react";
 import BaseComponent from "../BaseComponent";
 import FlipTacToe from "./games/FlipTacToe";
+import GolfCornHole from "./games/GolfCornHole";
 import SpikeBall from "./games/SpikeBall";
 import { GameRulesContext } from "./hooks";
 
@@ -27,6 +28,11 @@ const GameRules: React.FC<Props> = ({id}) => {
               key: "Flip-Tac-Toe",
               label: <b>Flip-Tac-Toe</b>,
               children: <FlipTacToe/>,
+            },
+            {
+              key: "Golf-Corn-Hole",
+              label: <b>Golf Corn Hole</b>,
+              children: <GolfCornHole/>,
             },
             {
               key: "SpikeBall",
