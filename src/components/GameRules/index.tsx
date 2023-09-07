@@ -7,6 +7,7 @@ import GolfCornHole from "./games/GolfCornHole";
 import PickleBall from "./games/PickleBall";
 import SpikeBall from "./games/SpikeBall";
 import { GameRulesContext } from "./hooks";
+import styles from "./styles.module.css";
 
 type Props = {
   id: string
@@ -33,21 +34,25 @@ const GameRules: React.FC<Props> = ({id}) => {
               key: "Battle-Putt",
               label: <b>Battle Putt</b>,
               children: <BattlePutt/>,
+              className: styles.tabPanel,
             },
             {
               key: "Flip-Tac-Toe",
               label: <b>Flip-Tac-Toe</b>,
               children: <FlipTacToe/>,
+              className: styles.tabPanel,
             },
             {
               key: "Golf-Corn-Hole",
               label: <b>Golf Corn Hole</b>,
               children: <GolfCornHole/>,
+              className: styles.tabPanel,
             },
             {
               key: "PickleBall",
               label: <b>Pickle Ball</b>,
               children: <PickleBall/>,
+              className: styles.tabPanel,
               extra: (
                 <Switch
                   checkedChildren="Simple"
@@ -63,6 +68,7 @@ const GameRules: React.FC<Props> = ({id}) => {
               key: "SpikeBall",
               label: <b>Spike Ball</b>,
               children: <SpikeBall/>,
+              className: styles.tabPanel,
               extra: (
                 <Switch
                   checkedChildren="Simple"

@@ -34,7 +34,8 @@ const LocationMap = () => {
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"/>
-          )
+          ),
+          className: styles.tabPanel,
         }
       ]}
     />
