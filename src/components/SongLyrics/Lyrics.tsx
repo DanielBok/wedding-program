@@ -53,7 +53,7 @@ const LyricSection: React.FC<SectionProps> = ({section}) => (
   <>
     <div className={styles.lyricVerticalLayout}>
       {section.map((sentence, i) => (
-        <div className={styles.lyricSentence}>{sentence}</div>
+        <div className={styles.lyricSentence} key={i}>{sentence}</div>
       ))}
     </div>
     <br/>
