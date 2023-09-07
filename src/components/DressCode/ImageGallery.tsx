@@ -9,6 +9,8 @@ import Male2 from "./images/Male2.jpg";
 import Male3 from "./images/Male3.jpg";
 import Male4 from "./images/Male4.jpg";
 import Male5 from "./images/Male5.jpg";
+import Male6 from "./images/Male6.jpg";
+import Male7 from "./images/Male7.jpg";
 import styles from "./styles.module.css";
 
 const images = [
@@ -19,6 +21,8 @@ const images = [
   Male3,
   Male4,
   Male5,
+  Male6,
+  Male7,
 ];
 
 const ImageGallery = () => {
