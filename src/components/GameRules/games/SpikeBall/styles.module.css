@@ -17,13 +17,3 @@
     text-align: justify;
     text-justify: inter-word;
 }
-
-.ruleList {
-    margin: 4px 0;
-    padding-inline-start: 20px;
-    list-style-type: lower-alpha;
-}
-
-.ruleList > li::marker {
-    font-weight: bold;
-}

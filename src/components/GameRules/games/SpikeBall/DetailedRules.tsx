@@ -1,6 +1,5 @@
 import React from "react";
-import { RuleSection } from "../GameRuleLayout";
-import styles from "./styles.module.css";
+import { BasicRuleList, RuleSection } from "../GameRuleLayout";
 
 
 const rules = {
@@ -25,11 +24,7 @@ const DetailedRules = () => (
   <>
     {Object.entries(rules).map(([title, instructions]) => (
       <RuleSection title={title} key={title}>
-        <ol className={styles.ruleList}>
-          {instructions.map((inst, i) => (
-            <li key={i}>{inst}</li>
-          ))}
-        </ol>
+        <BasicRuleList rules={instructions}/>
       </RuleSection>
     ))}
   </>

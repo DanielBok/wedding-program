@@ -1,6 +1,7 @@
 import { Collapse, Switch } from "antd";
 import React, { useState } from "react";
 import BaseComponent from "../BaseComponent";
+import FlipTacToe from "./games/FlipTacToe";
 import SpikeBall from "./games/SpikeBall";
 import { GameRulesContext } from "./hooks";
 
@@ -19,9 +20,14 @@ const GameRules: React.FC<Props> = ({id}) => {
         id={id}
         title="Game Rules"
       >
-
         <Collapse
+          accordion
           items={[
+            {
+              key: "Flip-Tac-Toe",
+              label: <b>Flip-Tac-Toe</b>,
+              children: <FlipTacToe/>,
+            },
             {
               key: "SpikeBall",
               label: <b>Spike Ball</b>,
@@ -34,7 +40,7 @@ const GameRules: React.FC<Props> = ({id}) => {
                   event.stopPropagation();
                   setSpikeBallRuleMode(checked ? "simple" : "default");
                 }}/>
-            }
+            },
           ]}
         />
       </BaseComponent>

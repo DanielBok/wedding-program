@@ -1,8 +1,13 @@
 import React from "react";
 
 
-const CenterContent: React.FC<{ children?: React.ReactNode }> = ({children}) => (
-  <div style={{display: "flex", justifyContent: "center"}}>
+type Props = {
+  className?: string
+  children?: React.ReactNode
+}
+
+const CenterContent: React.FC<Props> = ({className, children}) => (
+  <div style={{display: "flex", justifyContent: "center"}} className={className}>
     {children}
   </div>
 );

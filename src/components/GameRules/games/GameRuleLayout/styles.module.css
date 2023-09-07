@@ -1,6 +1,7 @@
 .layout {
     display: flex;
     flex-direction: column;
+    margin-bottom: 6px;
 }
 
 .tagline {
@@ -13,8 +14,19 @@
 .ruleSectionTitle {
     font-weight: 550;
     font-size: 13px;
+    text-decoration: underline;
 }
 
 .ruleSectionContent {
     padding-left: 2px;
+}
+
+.ruleList {
+    margin: 4px 0;
+    padding-inline-start: 20px;
+    list-style-type: lower-alpha;
+}
+
+.ruleList > li::marker {
+    font-weight: bold;
 }
