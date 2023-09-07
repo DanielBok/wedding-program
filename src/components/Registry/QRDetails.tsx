@@ -8,8 +8,8 @@ type Props = {
 }
 
 
-const QRDetails: React.FC<Props> = ({image, children}) => {
-  return <div className={styles.centerContent}>
+const QRDetails: React.FC<Props> = ({image, children}) => (
+  <div className={styles.centerContent}>
     <Image
       className={styles.qrCode}
       src={image}
@@ -17,7 +17,7 @@ const QRDetails: React.FC<Props> = ({image, children}) => {
       preview={false}
     />
     {children}
-  </div>;
-};
+  </div>
+);
 
 export default QRDetails;

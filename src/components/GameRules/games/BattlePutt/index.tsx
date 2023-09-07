@@ -14,19 +14,17 @@ const rules = [
 
 ];
 
-const BattlePutt = () => {
-  return (
-    <GameRuleLayout
-      tagline="Like beer pong, but with golf balls"
-    >
-      <CenterContent className={styles.imageContainer}>
-        <Image src={BattlePuttImage} preview={false} alt="Battle Putt" className={styles.image}/>
-      </CenterContent>
-      <RuleSection>
-        <BasicRuleList rules={rules}/>
-      </RuleSection>
-    </GameRuleLayout>
-  );
-};
+const BattlePutt = () => (
+  <GameRuleLayout
+    tagline="Like beer pong, but with golf balls"
+  >
+    <CenterContent className={styles.imageContainer}>
+      <Image src={BattlePuttImage} preview={false} alt="Battle Putt" className={styles.image}/>
+    </CenterContent>
+    <RuleSection>
+      <BasicRuleList rules={rules}/>
+    </RuleSection>
+  </GameRuleLayout>
+);
 
 export default BattlePutt;
