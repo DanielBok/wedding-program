@@ -65,7 +65,7 @@ function App() {
       Component: Registry,
       icon: <GiftTwoTone/>,
     },
-  ].filter(({showOnWeddingDay = false}) => showOnWeddingDay ? isWeddingDay : true);
+  ].filter(({showOnWeddingDay = false}) => !showOnWeddingDay || isWeddingDay);
 
   return (
     <Layout className={styles.outerLayout}>
