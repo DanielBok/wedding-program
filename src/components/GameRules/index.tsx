@@ -1,6 +1,7 @@
 import { Collapse, Switch } from "antd";
 import React, { useState } from "react";
 import BaseComponent from "../BaseComponent";
+import BattlePutt from "./games/BattlePutt";
 import FlipTacToe from "./games/FlipTacToe";
 import GolfCornHole from "./games/GolfCornHole";
 import SpikeBall from "./games/SpikeBall";
@@ -24,6 +25,11 @@ const GameRules: React.FC<Props> = ({id}) => {
         <Collapse
           accordion
           items={[
+            {
+              key: "Battle-Putt",
+              label: <b>Battle Putt</b>,
+              children: <BattlePutt/>,
+            },
             {
               key: "Flip-Tac-Toe",
               label: <b>Flip-Tac-Toe</b>,
