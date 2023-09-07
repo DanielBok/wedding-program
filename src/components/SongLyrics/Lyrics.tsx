@@ -2,7 +2,6 @@ import React from "react";
 import styles from "./styles.module.css";
 
 const TITLE = "Great is Thy Faithfulness";
-const ARTIST = "Carrie Underwood";
 const LYRICS = [
   [
     "Great is Thy faithfulness, O God my Father",
@@ -64,7 +63,6 @@ const LyricSection: React.FC<SectionProps> = ({section}) => (
 const Lyrics = () => (
   <div className={styles.lyricVerticalLayout}>
     <div className={styles.songTitle}>{TITLE}</div>
-    <div className={styles.songArtist}>by {ARTIST}</div>
     <div>
       {LYRICS.map((section, i) => (
         <LyricSection section={section} key={i}/>
