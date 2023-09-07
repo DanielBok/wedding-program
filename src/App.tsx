@@ -15,8 +15,8 @@ import Countdown from "./components/Countdown";
 import DressCode from "./components/DressCode";
 import EventDetail from "./components/EventDetail";
 import GameRules from "./components/GameRules";
-import Registry from "./components/Registry";
 import OrderOfEvents from "./components/OrderOfEvents";
+import Registry from "./components/Registry";
 import SongLyrics from "./components/SongLyrics";
 
 
@@ -107,7 +107,6 @@ function App() {
             }}
           />
         ))}
-
       </FloatButton.Group>
     </Layout>
   );
