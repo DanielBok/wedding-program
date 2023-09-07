@@ -43,7 +43,8 @@ const Registry: React.FC<Props> = ({id}) => {
             children:
               <QRDetails image={QRSingaporePayNow}>
                 <div><b>PayNow</b> for those from <b>Singapore</b></div>
-              </QRDetails>
+              </QRDetails>,
+            forceRender: true,
           },
           {
             key: "hongkong",
@@ -51,7 +52,8 @@ const Registry: React.FC<Props> = ({id}) => {
             children:
               <QRDetails image={QRHongKongPayMe}>
                 <div><b>PayMe</b> for those from <b>Hong Kong</b></div>
-              </QRDetails>
+              </QRDetails>,
+            forceRender: true,
           },
         ]}
       />
