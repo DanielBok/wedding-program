@@ -60,7 +60,7 @@ const OrderOfEvents: React.FC<Props> = ({id}) => {
     ],
     "01 Oct 2023": [
       {
-        label: "10:00 AM",
+        label: "11:00 AM",
         title: "Sunday Brunch",
         location: "Villa Latitude",
         moreInfo: "Come by for some babi guling (whenever you wake up) and for a swim at the pool"

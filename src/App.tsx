@@ -18,50 +18,54 @@ import GameRules from "./components/GameRules";
 import OrderOfEvents from "./components/OrderOfEvents";
 import Registry from "./components/Registry";
 import SongLyrics from "./components/SongLyrics";
+import { isBeforeWedding } from "./utils";
 
 
 const {Header, Footer, Content} = Layout;
 
 
 function App() {
+  const isWeddingDay = !isBeforeWedding();
+
   const contents = [
     {
       id: "event-details",
       desc: "Event Details",
       Component: EventDetail,
-      icon: <InfoCircleTwoTone/>
+      icon: <InfoCircleTwoTone/>,
     },
     {
       id: "oof",
       desc: "Order of Events",
       Component: OrderOfEvents,
-      icon: <CalendarTwoTone/>
+      icon: <CalendarTwoTone/>,
     },
     {
       id: "dress-code",
       desc: "Dress Code",
       Component: DressCode,
-      icon: <SkinTwoTone/>
+      icon: <SkinTwoTone/>,
     },
     {
       id: "song-lyrics",
       desc: "Song Lyrics",
       Component: SongLyrics,
-      icon: <SoundTwoTone/>
+      icon: <SoundTwoTone/>,
+      showOnWeddingDay: true,
     },
     {
       id: "game-rules",
       desc: "Game Rules",
       Component: GameRules,
-      icon: <TrophyTwoTone/>
+      icon: <TrophyTwoTone/>,
     },
     {
       id: "registry",
       desc: "Registry",
       Component: Registry,
-      icon: <GiftTwoTone/>
+      icon: <GiftTwoTone/>,
     },
-  ];
+  ].filter(({showOnWeddingDay = false}) => showOnWeddingDay ? isWeddingDay : true);
 
   return (
     <Layout className={styles.outerLayout}>
