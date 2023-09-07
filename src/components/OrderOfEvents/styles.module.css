@@ -1,0 +1,14 @@
+.label {
+    text-align: center;
+    font-weight: 700;
+}
+
+.eventDesc {
+    display: flex;
+    flex-direction: column;
+}
+
+.eventDesc > .title {
+    font-size: 13px;
+    font-weight: 550;
+}

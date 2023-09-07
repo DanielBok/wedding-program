@@ -16,7 +16,7 @@ import DressCode from "./components/DressCode";
 import EventDetail from "./components/EventDetail";
 import GameRules from "./components/GameRules";
 import Registry from "./components/Registry";
-import SequenceOfEvents from "./components/SequenceOfEvents";
+import OrderOfEvents from "./components/OrderOfEvents";
 import SongLyrics from "./components/SongLyrics";
 
 
@@ -32,16 +32,16 @@ function App() {
       icon: <InfoCircleTwoTone/>
     },
     {
+      id: "oof",
+      desc: "Order of Events",
+      Component: OrderOfEvents,
+      icon: <CalendarTwoTone/>
+    },
+    {
       id: "dress-code",
       desc: "Dress Code",
       Component: DressCode,
       icon: <SkinTwoTone/>
-    },
-    {
-      id: "soe",
-      desc: "Sequence of Events",
-      Component: SequenceOfEvents,
-      icon: <CalendarTwoTone/>
     },
     {
       id: "song-lyrics",
