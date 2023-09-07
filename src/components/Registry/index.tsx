@@ -21,6 +21,8 @@ const Registry: React.FC<Props> = ({id}) => {
       <TextHolder>
         <p>
           Thank you for joining us on this special day. Your presence is more than a present to us.
+        </p>
+        <p>
           However, if you'd like to contribute to our family (cat) building efforts,
           you may donate to our
           {" "}
