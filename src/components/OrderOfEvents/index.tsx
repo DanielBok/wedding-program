@@ -58,14 +58,14 @@ const OrderOfEvents: React.FC<Props> = ({id}) => {
         location: "Villa Latitude",
       },
     ],
-    "01 Oct 2023": [
-      {
-        label: "11:00 AM",
-        title: "Sunday Brunch",
-        location: "Villa Latitude",
-        moreInfo: "Come by for some babi guling (whenever you wake up) and for a swim at the pool"
-      }
-    ],
+    // "01 Oct 2023": [
+    //   {
+    //     label: "11:00 AM",
+    //     title: "Sunday Brunch",
+    //     location: "Villa Latitude",
+    //     moreInfo: "Come by for some babi guling (whenever you wake up) and for a swim at the pool"
+    //   }
+    // ],
   }), []);
 
   const [activeKey, setActiveKey] = useState(Object.keys(eventDates)[0]);
