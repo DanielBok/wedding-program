@@ -13,3 +13,13 @@
 .lyricSentence {
     text-align: center;
 }
+
+.lyricCollapse {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.lyricCollapseLabel {
+    text-align: center;
+    font-weight: 700;
+}

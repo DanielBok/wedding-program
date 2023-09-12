@@ -1,4 +1,6 @@
-import React from "react";
+import { CaretDownOutlined, CaretRightOutlined } from "@ant-design/icons";
+import { Collapse } from "antd";
+import React, { useState } from "react";
 import styles from "./styles.module.css";
 
 const TITLE = "Great is Thy Faithfulness";
@@ -32,7 +34,7 @@ const LYRICS = [
     "Pardon for sin and a peace that endureth",
     "Thine own dear presence to cheer and to guide",
     "Strength for today and bright hope for tomorrow",
-    "Blessings all mine with 10, 000 beside"],
+    "Blessings all mine with 10,000 beside"],
   [
     "Great is Thy faithfulness",
     "Great is Thy faithfulness",
@@ -60,16 +62,52 @@ const LyricSection: React.FC<SectionProps> = ({section}) => (
   </>
 );
 
-const Lyrics = () => (
-  <div className={styles.lyricVerticalLayout}>
-    <div className={styles.songTitle}>{TITLE}</div>
-    <div>
-      {LYRICS.map((section, i) => (
-        <LyricSection section={section} key={i}/>
-      ))}
-    </div>
+const SongLyrics = () => (
+  <div>
+    {LYRICS.map((section, i) => (
+      <LyricSection section={section} key={i}/>
+    ))}
   </div>
 );
+
+const Lyrics = () => {
+  const masterKey = "song-lyrics";
+  const [activeKey, setActiveKey] = useState(masterKey);
+
+  return (
+    <div className={styles.lyricVerticalLayout}>
+      <Collapse
+        accordion
+        bordered={false}
+        activeKey={activeKey}
+        size="small"
+        className={styles.lyricCollapse}
+        onChange={onCollapseChange}
+        items={[
+          {
+            key: masterKey,
+            forceRender: true,
+            showArrow: false,
+            label: (
+              <div className={styles.lyricCollapseLabel}>
+                {activeKey === masterKey ? <CaretDownOutlined/> : <CaretRightOutlined/>}
+                <span style={{marginLeft: 4}}>
+                    <span className={styles.songTitle}>{TITLE}</span>
+                </span>
+              </div>
+            ),
+            children: <SongLyrics/>,
+            className: styles.tabPanel,
+          }
+        ]}
+      />
+    </div>
+  );
+
+  function onCollapseChange(keys: string | string[]) {
+    setActiveKey(Array.isArray(keys) ? keys[0] : keys);
+  }
+};
 
 
 export default Lyrics;
