@@ -11,7 +11,6 @@ type Props = {
 }
 
 const tableNames = new Set(seating.map(e => e.tableName.toUpperCase()));
-const tableNumbers = new Set(seating.map(e => e.table));
 
 const columns: ColumnsType<typeof seating[0]> = [
   {
