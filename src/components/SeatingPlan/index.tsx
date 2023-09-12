@@ -1,3 +1,4 @@
+import { InfoCircleOutlined } from "@ant-design/icons";
 import { Input, Table } from "antd";
 import type { ColumnsType } from "antd/es/table";
 import React, { useState } from "react";
@@ -52,6 +53,7 @@ const SeatingPlan: React.FC<Props> = ({id}) => {
         pagination={false}
         rowKey="name"
         size="small"
+        footer={Footer}
       />
     </BaseComponent>
   );
@@ -76,5 +78,9 @@ const SeatingPlan: React.FC<Props> = ({id}) => {
     return tableNames.has(value.toUpperCase()) || !!value.match(/^\d+$/);
   }
 };
+
+const Footer = () => (
+  <div className={styles.footer}><InfoCircleOutlined/> The tables are named after our future cats. 🐈</div>
+);
 
 export default SeatingPlan;

@@ -93,7 +93,7 @@ function getTableName(x: number) {
     case 5:
       return "Peanut";
     case 6:
-      return "Claude";
+      return "Tiger";
     case 7:
       return "Banana";
     case 8:
