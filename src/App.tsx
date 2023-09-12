@@ -20,7 +20,7 @@ import OrderOfEvents from "./components/OrderOfEvents";
 import Registry from "./components/Registry";
 import SeatingPlan from "./components/SeatingPlan";
 import SongLyrics from "./components/SongLyrics";
-import { isBeforeWedding } from "./utils";
+import { getQueryParams, isBeforeWedding } from "./utils";
 
 
 const {Header, Footer, Content} = Layout;
@@ -28,6 +28,7 @@ const {Header, Footer, Content} = Layout;
 
 function App() {
   const isWeddingDay = !isBeforeWedding();
+  const {showAll} = getQueryParams();
 
   const contents = [
     {
@@ -74,7 +75,10 @@ function App() {
       Component: Registry,
       icon: <GiftTwoTone/>,
     },
-  ].filter(({showOnWeddingDay = false}) => !showOnWeddingDay || isWeddingDay);
+  ].filter(({showOnWeddingDay = false}) => {
+    if (showAll || !showOnWeddingDay) return true;
+    else return isWeddingDay;
+  });
 
   return (
     <Layout className={styles.outerLayout}>
