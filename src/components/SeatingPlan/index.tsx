@@ -1,5 +1,5 @@
 import { InfoCircleOutlined } from "@ant-design/icons";
-import { Input, Table } from "antd";
+import { Empty, Input, Table } from "antd";
 import type { ColumnsType } from "antd/es/table";
 import React, { useState } from "react";
 import BaseComponent from "../BaseComponent";
@@ -54,6 +54,7 @@ const SeatingPlan: React.FC<Props> = ({id}) => {
         rowKey="name"
         size="small"
         footer={Footer}
+        locale={{emptyText: <Empty description={<span className={styles.emptyText}>Can't find guest</span>}/>}}
       />
     </BaseComponent>
   );

@@ -4,8 +4,14 @@
 
 .inputBox {
     margin-bottom: 8px;
+    font-size: 16px;
 }
 
 .footer {
     font-size: 10px;
+}
+
+.emptyText {
+    font-size: 12px;
+    font-weight: 500;
 }
