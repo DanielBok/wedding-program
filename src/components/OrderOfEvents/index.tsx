@@ -29,6 +29,7 @@ const OrderOfEvents: React.FC<Props> = ({id}) => {
         label: "06:30 PM",
         title: "Welcome Dinner",
         location: "Cuca",
+        moreInfo: "The dress code is smart casual"
       }
     ],
     "30 Sep 2023": [

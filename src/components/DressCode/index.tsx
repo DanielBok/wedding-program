@@ -14,8 +14,12 @@ const DressCode: React.FC<Props> = ({id}) => (
   >
     <TextHolder>
       <p>
+        The dress code for the welcome dinner is smart casual.
+      </p>
+
+      <p>
         The dress code on the wedding day is {" "}
-        <b style={{color: "#A7C7E7", backgroundColor: "black"}}>Pastel Blue</b>
+        <b style={{color: "#A7C7E7", backgroundColor: "black"}}>Pastel Blue</b> (light blue)
         {" or "}
         <b style={{color: "white", backgroundColor: "black"}}>White</b>.
         We've prepared some examples for you in the gallery below.
