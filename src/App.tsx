@@ -1,5 +1,6 @@
 import {
   CalendarTwoTone,
+  CompassTwoTone,
   GiftTwoTone,
   InfoCircleTwoTone,
   MenuOutlined,
@@ -17,6 +18,7 @@ import EventDetail from "./components/EventDetail";
 import GameRules from "./components/GameRules";
 import OrderOfEvents from "./components/OrderOfEvents";
 import Registry from "./components/Registry";
+import SeatingPlan from "./components/SeatingPlan";
 import SongLyrics from "./components/SongLyrics";
 import { isBeforeWedding } from "./utils";
 
@@ -45,6 +47,13 @@ function App() {
       desc: "Dress Code",
       Component: DressCode,
       icon: <SkinTwoTone/>,
+    },
+    {
+      id: "seating",
+      desc: "Seating Plan",
+      Component: SeatingPlan,
+      icon: <CompassTwoTone/>,
+      showOnWeddingDay: true,
     },
     {
       id: "song-lyrics",

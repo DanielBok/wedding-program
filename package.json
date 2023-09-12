@@ -7,6 +7,7 @@
     "antd": "^5.8.4",
     "classnames": "^2.3.2",
     "dayjs": "^1.11.9",
+    "fuzzball": "^2.1.2",
     "javascript-color-gradient": "^2.4.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
