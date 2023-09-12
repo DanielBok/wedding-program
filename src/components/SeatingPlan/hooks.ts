@@ -4,7 +4,7 @@ import { useRef } from "react";
 import { seating } from "./seating-arrangement";
 
 export const useSearchCallback = () => {
-  return useRef(debounce(search, 350)).current;
+  return useRef(debounce(search, 150)).current;
 
   function processor({name, hidden}: typeof seating[0]) {
     return [name, hidden].join(" ").toUpperCase();
