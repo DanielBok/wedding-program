@@ -85,9 +85,9 @@ export const seating = [
 function getTableName(x: number) {
   switch (x) {
     case 1:
-      return "Pearl";
-    case 2:
       return "Elo";
+    case 2:
+      return "Pearl";
     case 3:
       return "Mimolette";
     case 4:
