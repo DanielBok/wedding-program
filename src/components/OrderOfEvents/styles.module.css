@@ -10,5 +10,9 @@
 
 .eventDesc > .title {
     font-size: 13px;
-    font-weight: 550;
+    font-weight: 600;
+}
+
+.subdesc {
+    font-size: 12px;
 }
