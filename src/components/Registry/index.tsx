@@ -45,8 +45,9 @@ const Registry: React.FC<Props> = ({id}) => {
           Thank you for joining us on this special day. Your presence is more than a present to us.
         </p>
         <p>
-          However, if you'd like to contribute to our family (cat) building efforts,
-          you may donate to our
+          Since we have limited luggage space and because we're waiting to move into our new apartment
+          next year, it would be difficult for us to receive physical gifts. However, if you'd like to
+          contribute to our family (cat) building efforts, you may donate to our
           {" "}
           <Text strong style={{color: "#4c638f"}}>Château des Chats</Text>
           {" "} fund
